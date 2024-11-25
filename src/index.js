@@ -52,7 +52,7 @@ if (passwordMatch) {
     }
 })
 
-app.get('/', (req, res) => {
+app.get('/testend', (req, res) => {
     res.send('Backend is working!');
   });
 
