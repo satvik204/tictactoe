@@ -20,6 +20,7 @@ const api_Secret = process.env.API_SECRET;
 
 const serverClient = StreamChat.getInstance(api_Key,api_Secret)
 
+
 app.post("/signup", async(req,res)=> {
     try{
 
@@ -50,7 +51,16 @@ if (passwordMatch) {
          res.json(error);
     }
 })
-app.listen(5000,() => {
-    console.log(`Server running on port ${5000}`);
+
+app.get('/', (req, res) => {
+    res.send('Backend is working!');
+  });
+
+
+const port = process.env.PORT || 3000;
+
+
+app.listen(port,() => {
+    console.log(`Server running on port ${port}`);
     
 })
